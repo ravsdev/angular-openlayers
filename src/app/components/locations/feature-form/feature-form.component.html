@@ -1,0 +1,15 @@
+<div *ngIf="feature !== null">
+  <h2>Feature</h2>
+  <form [formGroup]="featureForm">
+    <div *ngIf="feature?.getGeometry()?.getType() === 'Point'">
+      <label> POI </label>
+      <p-inputSwitch formControlName="POI" />
+    </div>
+
+    <div *ngIf="feature?.getGeometry()?.getType() === 'Polygon'">
+      <label> Crop </label>
+      <p-inputSwitch formControlName="crop" />
+    </div>
+  </form>
+  <p>{{ featureProperties }}</p>
+</div>

@@ -1,0 +1,19 @@
+<p-splitter
+  [panelSizes]="[25, 75]"
+  [minSizes]="[15, 0]"
+  [style]="{ height: '90vh' }"
+>
+  <ng-template pTemplate>
+    <div class="col">
+      <app-location-form />
+      <app-feature-form />
+    </div>
+  </ng-template>
+  <ng-template pTemplate>
+    <app-map class="col flex align-items-center justify-content-center">
+      <map-editbar />
+      <map-layer-switcher />
+      <map-layers />
+    </app-map>
+  </ng-template>
+</p-splitter>
